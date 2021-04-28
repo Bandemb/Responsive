@@ -71,6 +71,37 @@
 
 
     <script src="node.js"></script>
+    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        function nothing() {
+            swal("This is the database of the World's internet, What do you want to do? ", {
+                    buttons: {
+                        cancel: "Abort!",
+                        catch: {
+                            text: "Enter as an employee!",
+                            value: "catch",
+                        },
+                        risk: true,
+                    },
+                })
+                .then((value) => {
+                    switch (value) {
+
+                        case "risk":
+                            swal("Warning!", "Into the database!", "info");
+                            break;
+
+                        case "catch":
+                            swal("success", "Login sucessfully!", "success");
+                            break;
+
+                        default:
+                            swal("Got away sucessfully!");
+                    }
+                });
+        }
+    </script>
 </body>
 
 </html>
